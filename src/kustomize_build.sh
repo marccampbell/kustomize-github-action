@@ -3,6 +3,11 @@
 function kustomize_build {
     # gather output
     echo "build: info: kustomize build in directory ${kustomize_build_dir}."
+
+    if [ -n ${kustomize_set_image} ]; then
+      $(kustomize edit set image ${kustomize_set_image})
+    fi
+
     build_output=$(kustomize build ${kustomize_build_dir} 2>&1)
 
     build_exit_code=${?}
