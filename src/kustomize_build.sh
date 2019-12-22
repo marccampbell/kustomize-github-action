@@ -5,6 +5,7 @@ function kustomize_build {
     echo "build: info: kustomize build in directory ${kustomize_build_dir}."
 
     if [ -n ${kustomize_set_image} ]; then
+      echo "running kustomize edit set image ${kustomize_set_image}"
       $(kustomize edit set image ${kustomize_set_image})
     fi
 
