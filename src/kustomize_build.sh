@@ -6,6 +6,7 @@ function kustomize_build {
 
     if [ -n ${kustomize_set_image} ]; then
       echo "running kustomize edit set image ${kustomize_set_image}"
+      printenv
       $(kustomize edit set image ${kustomize_set_image})
     fi
 
