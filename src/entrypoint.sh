@@ -27,10 +27,8 @@ function parse_inputs {
 
     kustomize_set_image=""
     if [ -n "${INPUT_KUSTOMIZE_SET_IMAGE}" ]; then
-      pushd ${kustomize_build_dir}
       kustomize_set_image=${INPUT_KUSTOMIZE_SET_IMAGE}
-      popd
-    fi
+\    fi
 }
 
 function install_kustomize {

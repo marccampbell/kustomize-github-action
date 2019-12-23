@@ -6,7 +6,9 @@ function kustomize_build {
 
     if [ -n ${kustomize_set_image} ]; then
       echo "running kustomize edit set image ${kustomize_set_image}"
+      pushd ${kustomize_build_dir}
       $(kustomize edit set image ${kustomize_set_image})
+      popd
     fi
 
     build_output=$(kustomize build ${kustomize_build_dir} 2>&1)
