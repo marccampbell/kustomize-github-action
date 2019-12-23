@@ -6,7 +6,7 @@ function kustomize_build {
 
     if [ -n ${kustomize_set_image} ]; then
       echo "running kustomize edit set image ${kustomize_set_image}"
-      $(kustomize edit set image ${kustomize_set_image}
+      $(kustomize edit set image ${kustomize_set_image})
     fi
 
     build_output=$(kustomize build ${kustomize_build_dir} 2>&1)
